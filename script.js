@@ -53,6 +53,7 @@ areaRadios.forEach((radio) => {
       currentItems = yokohamaItems;
     } else {
       currentItems = foodItems;
+    }
 
     // 地域を切り替えたら、前回の結果が出っぱなしはおかしいからリセットするでやんす！
     retry();
