@@ -49,3 +49,16 @@ areaRadios.forEach((radio) => {
     retry();
   });
 });
+
+function spin() {
+  // items ではなく currentItems を使うでやんす！
+  const randomIndex = Math.floor(Math.random() * currentItems.length);
+  currentResult = currentItems[randomIndex];
+
+  resultDiv.textContent = `「${currentResult}」が当たったでやんす！`;
+
+  spinBtn.classList.add("hidden");
+  actionArea.classList.remove("hidden");
+}
+
+// （retryとshareResultの関数は前回のままでOKでやんす）
