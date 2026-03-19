@@ -20,6 +20,13 @@ const yokohamaItems = [
   "六角橋商店街",
 ];
 
+const foodItems = [
+  "近くのご飯屋さん",
+  "ネパールカレー",
+  "自由",
+  "ライフのお惣菜",
+];
+
 // 現在使っているリストを入れる変数（最初は東京にしておくでやんす）
 let currentItems = tokyoItems;
 
@@ -42,9 +49,10 @@ areaRadios.forEach((radio) => {
     // 選ばれた値(value)によってリストを差し替えるでやんす
     if (e.target.value === "tokyo") {
       currentItems = tokyoItems;
-    } else {
+    } else if(e.target.value == "yokohama"){
       currentItems = yokohamaItems;
-    }
+    } else {
+      currentItems = foodItems;
 
     // 地域を切り替えたら、前回の結果が出っぱなしはおかしいからリセットするでやんす！
     retry();
