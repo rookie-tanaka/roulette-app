@@ -61,4 +61,39 @@ function spin() {
   actionArea.classList.remove("hidden");
 }
 
-// （retryとshareResultの関数は前回のままでOKでやんす）
+// もう一回まわす処理
+function retry() {
+  resultDiv.textContent = "結果はここに出るでやんす";
+
+  // ボタンを最初の状態に戻す
+  spinBtn.classList.remove("hidden");
+  actionArea.classList.add("hidden");
+  currentResult = "";
+}
+
+// シェアする処理 (Web Share API)
+async function shareResult() {
+  const shareData = {
+    title: "ルーレットの結果",
+    text: `今日のルーレットの結果は「${currentResult}」だったでやんす！`,
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      console.log("シェアをキャンセルしたか、失敗したでやんすね", err);
+    }
+  } else {
+    // パソコンの一部ブラウザなど、非対応の場合の処理
+    alert(
+      "お使いの環境はシェア機能に対応していないみたいでやんす…。\n結果: " +
+        currentResult,
+    );
+  }
+}
+
+// ボタンがクリックされたときの動作を登録
+spinBtn.addEventListener("click", spin);
+retryBtn.addEventListener("click", retry);
+shareBtn.addEventListener("click", shareResult);
