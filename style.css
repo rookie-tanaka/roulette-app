@@ -20,6 +20,16 @@ button {
   cursor: pointer;
 }
 
+#toggle-area {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+#toggle-area label {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
 /* このクラスがついている要素は画面から消える */
 .hidden {
   display: none !important;
