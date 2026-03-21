@@ -3,6 +3,7 @@ const tokyoItems = [
   "下北沢",
   "つり堀武蔵野園",
   "西荻窪",
+  "横浜",
 ];
 
 const yokohamaItems = [
